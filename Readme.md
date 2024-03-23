@@ -14,14 +14,22 @@ Before running the application, ensure you have the following installed:
 
 1. **Clone the Repository**
 
-   Clone this repository to your local machine using Git:
+   Clone this repository to your local machine using Git. The `--recurse-submodules` is because Garnet is attached as a Git submodule. The git submodule lets us connect an external git repo. Currently, Garnet does not have an official docker image yet, so we need to compile one:
 
    ```bash
-   git clone <repository-url>
-   cd redis-vs-garnet-performance
+   git clone --recurse-submodules <repository-url>
+   cd caching-performers
    ```
 
-2. **Start Redis and Garnet Instances**
+2. **Install Node.js Dependencies**
+
+   Install the required Node.js packages:
+
+   ```bash
+   npm install
+   ```
+
+3. **Start Redis and Garnet Instances**
 
    Use shell script `startup.sh` to start the Redis and Garnet instances:
 
@@ -30,15 +38,7 @@ Before running the application, ensure you have the following installed:
    ```
 
    This script uses the `docker-compose` to start each docker image.
-   This will start Redis on port 6379 and Garnet on port 3278 by default. Ensure these ports are available on your system or adjust the Docker Compose configuration accordingly.
-
-3. **Install Node.js Dependencies**
-
-   Install the required Node.js packages:
-
-   ```bash
-   npm install
-   ```
+   This will start Redis on port 6379, Garnet on port 3278, and Dragonfly on port 6380 by default. Ensure these ports are available on your system or adjust the Docker Compose configuration accordingly.
 
 ## Running the Tests
 
@@ -67,6 +67,21 @@ The output is presented in a tabulated format showing the average execution time
 ## Extending the Tests
 
 To add more tests or modify existing ones, edit the `index.js` file. The test framework is modular, allowing for easy addition of new operations or modification of existing tests to include more complex scenarios.
+
+## Updating Garnet
+
+To update Garnet, either navigate to the `garnet` folder and run a `git pull`:
+
+```bash
+cd path/to/garnet
+git pull origin main
+```
+
+Or you can update the submodule using the latest commit:
+
+```bash
+git submodule update --remote
+```
 
 ## Contributions
 
