@@ -1,3 +1,7 @@
 [submodule "garnet"]
 	path = garnet
 	url = https://github.com/microsoft/garnet.git
+
+[submodule "go-boilerplate"]
+	path = go-boilerplate
+	url = https://github.com/eldad87/go-boilerplate.git
