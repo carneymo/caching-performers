@@ -40,6 +40,30 @@ Before running the application, ensure you have the following installed:
    This script uses the `docker-compose` to start each docker image.
    This will start Redis on port 6379, Garnet on port 3278, and Dragonfly on port 6380 by default. Ensure these ports are available on your system or adjust the Docker Compose configuration accordingly.
 
+## Integrating the Go Boilerplate
+
+The project also includes the [Go Boilerplate](https://github.com/eldad87/go-boilerplate.git) as a submodule, which serves as an extensible foundation for Go-based applications. It provides a production-ready, well-structured, and Dockerized environment for developing Go services.
+
+### What is the Go Boilerplate?
+
+The Go Boilerplate is a fully-featured template designed to streamline the development of Go applications. It includes:
+
+- Modular file structure with separate data and transport layers.
+- Built-in support for gRPC, async jobs, health checks, and logging.
+- Integration with Prometheus, Jaeger, and Swagger UI for monitoring and documentation.
+
+### Navigating the Go Boilerplate
+
+If you want to explore or extend the Go Boilerplate:
+
+1. Navigate to the `go-boilerplate` directory:
+
+   ```bash
+   cd go-boilerplate
+   ```
+
+2. Review the detailed [README](./go-boilerplate/README.md) in the submodule for more information about its features and usage.
+
 ## Running the Tests
 
 To execute the performance tests, run:
