@@ -92,20 +92,21 @@ The output is presented in a tabulated format showing the average execution time
 
 To add more tests or modify existing ones, edit the `index.js` file. The test framework is modular, allowing for easy addition of new operations or modification of existing tests to include more complex scenarios.
 
-## Updating Garnet
+## Updating Garnet and Go Boilerplate
 
-To update Garnet, either navigate to the `garnet` folder and run a `git pull`:
+To update the Garnet or Go Boilerplate submodules:
 
-```bash
-cd path/to/garnet
-git pull origin main
-```
+1. Navigate to the respective submodule directory and pull the latest changes:
 
-Or you can update the submodule using the latest commit:
+   ```bash
+   cd path/to/submodule
+   git pull origin main
+   ```
 
-```bash
-git submodule update --remote
-```
+2. Alternatively, update the submodules using:
+   ```bash
+   git submodule update --remote
+   ```
 
 ## Contributions
 
